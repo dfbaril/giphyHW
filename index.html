@@ -1,0 +1,69 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Dain's Page</title>
+  <meta name="description" content="Personal Portfolio">
+  <meta name="author" content="Dain Baril">
+
+    <!-- Bootstrap CSS -->
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- My own CSS
+    <link rel="stylesheet" href="css/style.css"> -->
+    <!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+  <div id="racingButtons">
+
+  </div>
+
+  <form id="racing-form">
+      <label for="racing-input">Add some cars</label>
+      <input type="text" id="car-input"><br>
+
+      <input id="addCar" type="submit" value="Submit">
+  </form>
+
+  <div id="cars">
+
+  </div>
+
+
+
+
+
+
+
+  <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script>
+
+  var
+  var APIkey = "vw4loxV4tgBnuMTh4cJ7C9CCpHZLSkeO";
+  var racingForm = $('#racing-form')
+
+  var topics = ["cars", "Formula 1", "chess", "cats", "billiards", "computers", "technology"];
+  var helloWorld = $(this).get("http://api.giphy.com/v1/gifs/search?q=" + topics[1] + "&" + APIkey + "&limit=5");
+helloWorld.done(function(data) { console.log("success got data", data); });
+
+  racingForm.event.preventDefault;
+
+
+
+</script>
+
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+<![endif]-->
+</body>
+</html>
