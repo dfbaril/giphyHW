@@ -1,19 +1,14 @@
-// ~~DONE SO FAR: I have created a for loop that adds buttons to the HTML that read topics[i]
-// ~~NEXT STEPS: 
-//1.I want the buttons to generate an ajax call for images of topics[i]
-//2. I want to use a for loop to have the resultimages append to the HTML with certain attributes
-//3. poops
-
+//I still need to take the .val() of the submit input form to create a new button
 
 $(document).ready(function() {
+    // if I set url to ".../vi/gifs/RANDOM/search?q=", then it breaks saying that I don't have permissions.
+    // IDK why. The documentation seems to indicate that this is what I should put to return random gifs
     var url = "http://api.giphy.com/v1/gifs/search?q="
     var APIkey = "&api_key=vw4loxV4tgBnuMTh4cJ7C9CCpHZLSkeO";
     var ten = "&limit=10"
-    var topics = ["cars", "F1", "chess", "cats", "billiards", "computers", "technology"];
-    // var queryURL = url + topics[0] + APIkey + ten;
+    var topics = ["Cars", "F1", "Chess", "Cats", "Science Fiction", "Computers", "Technology"];
+    var rating = "&rating=pg-13";
 
-//OMG syntax errors :gun::head:
-    //ok its fixed
 
 //begin for loop that adds buttons with text
     for(i = 0; i < topics.length; i++){
@@ -22,7 +17,7 @@ $(document).ready(function() {
         // I will need to add an onclick event listener to this that will add topical images for each time it increments the var topics
         // newButton.attr();
         newButton.text(topics[i]);
-        newButton.addClass("query-button");
+        newButton.addClass("query-button btn btn-default btn-lg");
         $(div).append(newButton);
 
         //okay above this line works
@@ -30,29 +25,16 @@ $(document).ready(function() {
 
 //end for loop
 
-// THIS IS UNNECESSARY
-    // $(newButton).on("click", function() {
-    //     var queryURL = url + topics[i] + APIkey + "&limit=1";
-
-    //     $.ajax({
-    //         url: queryURL,
-    //         method: "GET"
-    //     }).then(function(response) {
-    //         console.log(response);
-    //     })
-    // }
-// )})
 
 
 
 
-
-  $(document).on("click", ".query-button", function() {
+  $(document).on("click", ".query-button", function(query) {
     var queryTerm = $(this).text();
     console.log(queryTerm);
-    var queryURL = url + queryTerm + APIkey + ten;
-    var carsDiv = $('#cars');
-    carsDiv.empty();
+    var queryURL = url + queryTerm + APIkey + ten + rating;
+    var imageDiv = $('#images');
+    imageDiv.empty();
     $.ajax({
       url: queryURL,
       method: "GET"
@@ -79,7 +61,7 @@ $(document).ready(function() {
           }
 
         });
-        carsDiv.prepend(resultImg);
+        imageDiv.prepend(resultImg);
       }
     });
   });

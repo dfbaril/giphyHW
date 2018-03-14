@@ -14,8 +14,8 @@
     <!-- Bootstrap CSS -->
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- My own CSS
-    <link rel="stylesheet" href="css/style.css"> -->
+     <!-- My own CSS -->
+<link rel="stylesheet" href="style.css"> 
     <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -23,17 +23,25 @@
 </head>
 <body>
 
-  <div id="imageButtons">
+  <div class="container-fluid">
+
+    <div id="imageButtons" class="container">
+      <form class="navbar-form navbar-nav">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+          <button type="submit" class="btn btn-outline-light">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+
+
+    <div id="images">
+
+    </div>
 
   </div>
-
-  <button id="cars-button" type="button" name="button">Cars</button>
-
-  <div id="cars">
-
-  </div>
-
-
 
 
 
